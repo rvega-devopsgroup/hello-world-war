@@ -46,7 +46,9 @@ project {
         name = "Hello World"
         steps {
             script { scriptContent = "echo hi" }
-            maven { goals = "clean package"  }
+            maven {
+                mavenVersion = defaultProvidedVersion()
+                goals = "clean package"  }
         }
     }
 }
