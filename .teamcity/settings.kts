@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2018_2.*
+import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.script
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -36,6 +37,14 @@ project {
             param("displayName", "GitHub.com")
             param("gitHubUrl", "https://github.com/")
             param("providerType", "GitHub")
+        }
+    }
+
+    buildType {
+        id("HelloWorld")
+        name = "Hello World"
+        steps {
+            script { scriptContent = "echo hi" }
         }
     }
 }
