@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2018_2.*
+import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.script
 
 /*
@@ -45,6 +46,7 @@ project {
         name = "Hello World"
         steps {
             script { scriptContent = "echo hi" }
+            maven { goals = "clean package"  }
         }
     }
 }
